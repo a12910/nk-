@@ -1,0 +1,28 @@
+<view class="box0" style="height:128rpx;width:100%;left:0rpx">
+  <view id='edit_title'>
+    <image src='png/ask.png' id="title_img"></image>
+    <view style="width:20rpx;"></view>
+    <view id="title_text1">反馈与建议</view>
+  </view>
+</view>
+<view style="height:15rpx;"></view>
+<view class='box0' style="height:1000rpx;">
+  <view id='contact_text'>联系方式(选填)</view>
+  <input bindinput='contact_input' value='{{contact1}}' id="contact_in"></input>
+  <view id='ques_text'>问题描述</view>
+  <textarea bindinput='ques_input' value='{{ques1}}' id="ques_in" placeholder='请尽量详细地描述您遇到的问题'></textarea>
+  <view style="height:250rpx;"></view>
+<view style="height:100rpx;display:flex">
+  <view style="width:180rpx;"></view>
+  <view bindtap='but_save' id="c_but2">提 交</view>
+</view>
+</view>
+
+<image src='../../png/bg1.png' class="bg_image"></image>
+
+<!-- <view id='confirm_box'>
+  <view id='confirm_but' style="left:505rpx">
+    <view id='confirm_text2' bindtap='but_save' >保存并提交</view>
+  </view>
+  
+</view> -->

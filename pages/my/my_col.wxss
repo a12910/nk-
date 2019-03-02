@@ -1,0 +1,60 @@
+/* pages/my/my_col.wxss */
+@import"../search/search.wxss";
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+#edit_title{
+  position: relative;
+  display:flex;
+  left:275rpx;
+  top:40rpx;
+  width:200rpx;
+  height:42rpx;
+
+}
+
+#title_img{
+  width:40rpx;
+  height:42rpx;
+  /* position: relative; */
+}
+
+#title_text1{
+  font-size: 32rpx;
+  font-weight: 600;
+  color:#5381e2;
+}
+
+.c-state1{
+  transform: rotate(0deg) scale(1) translate(75%,0%); 
+  -webkit-transform: rotate(0deg) scale(1) translate(75%,0%); 
+}
+
+.lesson_rmore2{
+  position: relative;
+  bottom: -12rpx;
+  right:-513rpx;
+  width:33rpx;
+  height:10rpx;
+}
+
+.lesson_collect1{
+  position: relative;
+  top:-109rpx;
+  right:-377rpx;
+  width:178rpx;
+  height:69rpx;
+}
+
+#no_text{
+  font-size: 31rpx;
+  color: #787878;
+  position: absolute;
+  top:250rpx;
+  left:300rpx;
+  z-index: 100;
+}

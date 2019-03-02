@@ -1,0 +1,11 @@
+<view class="box0" style="height:128rpx;width:100%;left:0">
+  <view id='edit_title'>
+    <image src='png/my_col.png' id="title_img"></image>
+    <view style="width:20rpx;"></view>
+    <view id="title_text1">我的收藏</view>
+  </view>
+</view>
+<view style="height:15rpx;"></view>
+
+
+<image src='../../png/bg1.png' class="bg_image"></image>

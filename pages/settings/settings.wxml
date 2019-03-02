@@ -1,0 +1,72 @@
+<!-- pages/settings/settings.wxml -->
+<!-- <template name='lable'>
+
+  <navigator class='lable_box' url='{{url}}' wx:if="{{url!=''}}">
+    <view style="width:30rpx;"></view>
+    <image class='lable_img' src='png/{{png}}'></image>
+    <view style="width:25rpx;"></view>
+    <view class='lable_text'>{{name}}</view>
+    <view style="width:400rpx;"></view>
+    <image src='png/arrow.png' class='lable_img'></image>
+  </navigator>
+  <view class='lable_box' bindtap='{{tap}}' wx:else>
+    <view style="width:30rpx;"></view>
+    <image class='lable_img' src='png/{{png}}'></image>
+    <view style="width:25rpx;"></view>
+    <view class='lable_text'>{{name}}</view>
+    <view style="width:400rpx;"></view>
+    <image src='png/arrow.png' class='lable_img'></image>
+  </view>
+  <view style="height:3rpx;width:100%;background-color:#eee;"></view>
+</template> 
+<view class='box0'>
+  <template is='lable' data="{{name:'我的收藏', png:'my_col.png', url:'../my/my_col'}}" />
+  <template is='lable' data="{{name:'我的回答', png:'my_ans.png', url:'../my/my1'}}" />
+</view>
+<view style="height:15rpx;"></view>
+<view class='box0'>
+  <template is='lable' data="{{name:'意见反馈', png:'ask.png', url:'../ask/ask'}}" />
+  <template is='lable' data="{{name:'关于我们', png:'about.png', tap:'about_us', url:''}}" />
+</view>-->
+<image src='../../png/bg1.png' class="bg_image"></image>
+<template name="blocks">
+  <view style="background-color:{{color}}" class="bblock">
+    <view style=""></view>
+    <image class="block_img" src="png/{{img}}.png"></image>
+    <view class="block_text">{{text}}</view>
+  </view>
+</template>
+<view class="box0" style="height:128rpx;width:100%;left:0rpx">
+  <view id='edit_title'>
+    <image src='png/arrow2.png' bindtap='back2' id="back_img2"></image>
+    <image src='png/sort.png' id="title_img"></image>
+    <view style="width:20rpx;"></view>
+    <view id="title_text1">我的菜单</view>
+  </view>
+</view>
+<view style="height:15rpx;"></view>
+<view style="width:100%;height:510rpx;position:relative;left:-22rpx;">
+  <view style="height:40rpx"></view>
+  <view style="display:flex">
+    <view style="width:75rpx"></view>
+    <!-- <template is="blocks" data="{{img:'my_col', color:'#4688ee', text:'我的收藏'}}" /> -->
+    <image class="block_img3" src='png/my_col.png' bindtap='to_page' data-url='../my/my_col'></image>
+    <view style="width:10rpx"></view>
+    <image class="block_img3" src='png/my_ans.png' bindtap='to_page' data-url='../my/my1'></image>
+    <view style="width:10rpx"></view>
+    <image class="block_img3" src='png/aboutus.png' bindtap='about_us' data-url='../'></image>
+    
+  </view>
+  <view style="height:10rpx"></view>
+  <view style="display:flex">
+    <view style="width:75rpx"></view>
+    <image class="block_img3" src='png/back.png' bindtap='to_page' data-url='../ask/ask'></image>
+    <view style="width:10rpx"></view>
+    <image class="block_img3" src='../../png/logo.png' bindtap='about_us2'></image>
+    <view style="width:10rpx"></view>
+    <!-- <image class="block_img3" src='png/load.png'></image> -->
+    <button open-type='contact' class="block_img3">
+      <image class="block_img4" src='png/help.png'></image>
+    </button>
+  </view>
+</view>

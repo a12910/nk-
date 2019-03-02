@@ -1,0 +1,29 @@
+/* pages/settings/about.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+}
+
+#edit_title{
+  position: relative;
+  display:flex;
+  left:275rpx;
+  top:40rpx;
+  width:200rpx;
+  height:42rpx;
+
+}
+
+#title_img{
+  width:40rpx;
+  height:42rpx;
+  /* position: relative; */
+}
+
+#title_text1{
+  font-size: 32rpx;
+  font-weight: 500;
+  color:#5381e2;
+}

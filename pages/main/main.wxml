@@ -1,0 +1,61 @@
+<swiper style="height:100%;width:100%;background-color:#eee;" current="{{p_index}}">
+
+  <swiper-item>
+    <image src='../../png/bg1.png' mode='aspectFit' class="bg-1"></image>
+    <view id='menu_img' bindtap='to_menu'>
+      <image src='png/menu.png' style="width:40rpx;height:29rpx;"></image>
+    </view>
+
+    <scroll-view scroll-y style="height:100%">
+      <view bindtap="search_navi" id="searchbar1">
+        <view id="searchbar2"></view>
+        <image src='png/search.png' id="searchbar_image"></image>
+        <view id="searchbar_text">请输入课程名称</view>
+      </view>
+      <view id="hotanswer" bindlongtap='edit_mode'>
+        <image id="hotanswer_image" src='png/hotanswer_image.png'></image>
+        <view id="hotanswer_text">{{is_edit?'编辑模式':'热门评论'}}</view>
+      </view>
+
+
+      <view style="height:810rpx"></view>
+      <view class="answer_block0" wx:for="{{lesson_hot}}" bindtap='to_lesson' data-info="{{item}}" data-index="{{index}}" bindlongtap='main_order'>
+
+        <view class="answer_block">
+          <view style="height:21rpx"></view>
+          <view class="answer_lesson">{{item.class_name}}</view>
+          <view style="height:15rpx"></view>
+          <view style="width:350rpx;display:flex;color:#4a4a4a;font-size:30rpx;">
+            <view style="width:26rpx;"></view>
+            <image src='{{item.logo}}' style="height:35rpx;width:35rpx;border-radius:18rpx"></image>
+            <view style="width:10rpx;"></view>
+            {{item.user_name}} > {{item.teacher_name}}
+          </view>
+
+          <view style="height:10rpx"></view>
+          <view class="answer_text">{{item.answer_text}}</view>
+          <view style="height:10rpx"></view>
+          <!-- <view style="display:flex;height:41rpx;width:100%;">
+            <image class="answerc_image" src='png/answer_count.png'></image>
+          <view class="answerc_count">{{123}}</view>
+            <image class="answer_more" src='png/answer_more.png'></image>
+          </view> -->
+          <view style="height:15rpx"></view>
+        </view>
+        <view style="height:15rpx"></view>
+
+      </view>
+
+
+
+
+      <view style="height:50rpx"></view>
+    </scroll-view>
+  </swiper-item>
+  <!-- <swiper-item>
+    
+  </swiper-item> -->
+</swiper>
+<!-- <view style="height:100%;width:100%;background-color:#eee;" class="{{is_open?'c-state1':'c-state2'}}"> -->
+
+<!-- </view> -->

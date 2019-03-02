@@ -1,0 +1,115 @@
+<image src='../../png/bg1.png' class="bg_image"></image>
+<image src="../../png/blue_bg.png" id="bg_img2"></image>
+<image src='png/arrow.png' id="back_img" bindtap='to_back'></image>
+<view id="search_input0">
+    <view style="width:18rpx"></view>
+    <input id="search_input" name="userName" placeholder="请输入课程名称" bindinput="quesInput" bindconfirm='confirm' focus="{{true}}" />
+    <image src='png/search.png' id="search_image" bindtap='confirm' bindtouchstart='on_cli' bindtouchend='end_cli'></image>
+    <view id="on_click" wx:if="{{on_but}}"></view>
+</view>
+
+<template name="sel_bar1">
+    <picker class="sel_textv" bindchange="bar_select1" data-type="{{datas.name}}" data-num="{{num}}" range="{{datas.datas_list}}" wx:if="{{datas.type=='0'}}" value="{{datas.choose_index}}">
+        <view class="sel_textv">
+            <view style="width:30rpx"></view>
+            <view class="sel_textt">{{datas.datas[datas.choose_index].short}}</view>
+            <view style="width:10rpx"></view>
+            <image src='png/down.png' class="sel_img2"></image>
+        </view>
+
+    </picker>
+    <view class="sel_textv" bindtap="bar_select" data-num="{{num}}" wx:elif="{{datas.type=='1'}}">
+        <view style="width:30rpx"></view>
+        <view class="sel_textt">{{datas.name}}</view>
+        <view style="width:10rpx"></view>
+        <image src='png/down.png' class="sel_img2"></image>
+    </view>
+</template>
+
+<template name="sel_bar2">
+    <view class="sel_textss" id="sel_text4" bindtap="bar_select" data-num="0" wx:if="{{datas.is_select}}">
+        <view style="width:5rpx"></view>
+        <view class="sel_textt" style="color:#5381b2">{{datas.name}}</view>
+        <view style="width:10rpx"></view>
+        <image src='png/down.png' class="sel_img1"></image>
+    </view>
+    <view id="select_box" wx:if="{{datas.is_select}}">
+        <view id='sel_box2'>
+            <view wx:for="{{[1,2,3,4,5,6,7]}}" class='sel_title' wx:for-item="item">{{item}}</view>
+        </view>
+    </view>
+</template>
+
+<view id="select_bar">
+    <view style="width:15rpx"></view>
+    <template is="sel_bar1" data="{{datas:select_datas[0], num:0}}" />
+    <template is="sel_bar1" data="{{datas:select_datas[1], num:1}}" />
+    <template is="sel_bar1" data="{{datas:select_datas[2], num:2}}" />
+    <template is="sel_bar1" data="{{datas:select_datas[3], num:3}}" />
+
+    <!-- <template is="sel_bar2" data="{{name:'课程来源', num:1, select_type:select_type}}" />
+  <template is="sel_bar2" data="{{name:'校区', num:2, select_type:select_type}}" />
+  <template is="sel_bar2" data="{{name:'周次', num:3, select_type:select_type}}" /> -->
+    <template is="sel_bar2" data="{{datas:select_datas[3]}}" />
+</view>
+
+
+<!-- <image id='sift1' src='png/sift1.png' bindtap="sift2"></image> -->
+<!-- 
+<view wx:if="{{is_sift}}">
+
+  <scroll-view id="s_choose0" scroll-y>
+
+
+    <view id="sdep_box0">
+      <view class="sdep_text1">课程来源</view>
+      <view id="choose_all">
+        <view class="choose_text" bindtap='choose_all'>全选</view>
+        <view style="width:20rpx"></view>
+        <view class="choose_text" bindtap='choose_no'>全不选</view>
+      </view>
+      <view style="height:10rpx;"></view>
+      <view class="sdep_box1">
+        <view wx:for="{{departments}}">
+          <view bindtap='dep_choose' data-name="{{item.name}}" style="display:flex;height:56rpx">
+            <image wx:if="{{item.type==1}}" src='png/check1.png' class="sdep_image"></image>
+            <image wx:else src='png/check0.png' class="sdep_image"></image>
+            <view style="width:6rpx"></view>
+            <view class="sdep_texts">{{item.name}}</view>
+            <view style="width:30rpx;"></view>
+          </view>
+        </view>
+      </view>
+      <view style="height:15rpx"></view>
+    </view>
+
+  </scroll-view>
+</view> -->
+<view class='{{is_sift?"opc":""}}'>
+    <!-- <view id="s_text2">已按条件筛选出{{lessons.length}}条结果</view> -->
+    <scroll-view id="lesson_choose1" scroll-y style="height:100%;">
+        <view wx:for="{{lessons}}">
+
+            <navigator class="lesson_box1" url='../lesson/lesson?class_name={{item.class_name}}&department={{item.department}}&class_id={{item._id}}'>
+                <view style="height:21rpx"></view>
+                <view style="display:flex;width:100%">
+                    <view class="lesson_text1">{{item.class_name2}}</view>
+                    <view class="lesson_text3">{{item.department}}</view>
+                </view>
+
+                <view style="height:10rpx"></view>
+                <view class="lesson_text2">开课教师：{{item.teachers[0] + " "}} {{item.teachers[1]==undefined?"":(item.teachers[1]+" ")}} {{item.teachers[2]==undefined?"":(item.teachers[2]+" ")}} {{item.teachers.length>3?"...":""}}
+                </view>
+                <!-- <view style="height:25rpx"></view> -->
+                <view style="display:flex;width:100%;">
+                    <!-- <image class="lessonc_image" src='png/answer_count.png'></image>
+          <view class="lessonc_count">{{item.answer_count}}</view> -->
+                    <!-- <image class="lessonr_more" src='png/answer_more.png'></image> -->
+                </view>
+                <view style="height:30rpx"></view>
+            </navigator>
+            <view style="height:15rpx"></view>
+        </view>
+
+    </scroll-view>
+</view>

@@ -1,0 +1,119 @@
+/* pages/settings/settings.wxss */
+
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+button::after{
+border: none;
+}
+
+button {
+left:-9rpx;
+position:relative;
+display:block;
+margin-left:auto;
+margin-right:auto;
+padding-left:0px;
+padding-right:0px;
+/* box-sizing:border-box; */
+font-size:18px;
+text-align:center;
+text-decoration:none;
+line-height:2.55555556;
+border-radius:5px;
+-webkit-tap-highlight-color:transparent;
+overflow:hidden;
+color:#000000;
+background-color:#fff;
+}
+
+
+
+#edit_title{
+  position: relative;
+  display:flex;
+  left:290rpx;
+  top:40rpx;
+  /* width:200rpx; */
+  height:42rpx;
+
+}
+
+#title_img{
+  width:40rpx;
+  height:42rpx;
+  /* position: relative; */
+}
+
+#title_text1{
+  font-size: 36rpx;
+  font-weight: 600;
+  color:#5381e2;
+  position: relative;
+  top:-2rpx;
+}
+
+.lable_box{
+  display:flex;
+  width:100%;
+  height:100rpx;
+
+}
+
+.lable_img{
+  width:40rpx;
+  height:40rpx;
+  position: relative;
+  top:30rpx;
+}
+
+.lable_text{
+  font-size: 30rpx;
+  color:#4a4a4a;
+  position: relative;
+  top:28rpx;
+}
+
+.bblock{
+  width:215rpx;
+  height:215rpx;
+  display:flex; 
+  justify-content:center; 
+  align-items:center;
+  border-radius: 10rpx;
+}
+
+.block_img3{
+  width:213rpx;
+  height:213rpx;
+  border-radius: 20rpx;
+  box-shadow: 0rpx 2rpx 6rpx #b5b5b5;
+}
+
+.block_img4{
+  width:211rpx;
+  height:200rpx;
+  position: relative;
+  top:3rpx;
+  left:-7rpx;
+}
+
+.block_text{
+  font-size: 28rpx;
+  color: #fff;
+
+}
+
+#back_img2{
+  width:44rpx;
+  height:40rpx;
+  position: absolute;
+  top:3rpx;
+  left:-244rpx;
+  z-index:1100;
+}
+
+

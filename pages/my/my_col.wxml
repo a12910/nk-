@@ -1,0 +1,47 @@
+<!--pages/my/my_col.wxml-->
+
+<view style="width;100%;height:100% ">
+  <!-- <view style="height:15rpx;"></view> -->
+  <view class="box0" style="height:128rpx;width:100%;left:0" bindtap='open'>
+    <view id='edit_title'>
+      <image src='png/my_col.png' id="title_img"></image>
+      <view style="width:20rpx;"></view>
+      <view id="title_text1">我的收藏</view>
+    </view>
+  </view>
+  <view style="height:15rpx;"></view>
+
+
+
+
+  <scroll-view id="lesson_choose1" style="top:145rpx;" scroll-y>
+    <view wx:for="{{lessons}}">
+      <view class="lesson_box1" bindtap='lesson_info' data-info="{{item}}">
+      
+        <view style="height:21rpx"></view>
+        <view style="display:flex;width:100%">
+          <view class="lesson_text1">{{item.class_name}}</view>
+          <view class="lesson_text3">{{item.department}}</view>
+        </view>
+
+        <view style="height:10rpx"></view>
+        <view class="lesson_text2">任课教师：{{item.teacher_name}}</view>
+        <view style="height:25rpx"></view>
+        <view style="display:flex;width:100%;">
+          <!-- <image class="lessonc_image" src='png/answer_count.png'></image> -->
+          <!-- <view class="lessonc_count">{{item.answer_count}}</view> -->
+          <view class="lessonc_count" style="left:41rpx">{{item.department}}</view>
+          <!-- <image class="lessonr_more" src='png/answer_more.png'></image> -->
+          <image class="lesson_rmore2" src='png/answer_more.png'></image>
+          
+          <image class="lesson_collect1" src='png/collect1.png'></image>
+        </view>
+      </view>
+      <view style="height:15rpx"></view>
+    </view>
+
+  </scroll-view>
+</view>
+
+<image src='../../png/bg1.png' class="bg_image"></image>
+<view wx:if="{{answers.length==0}}" id="no_text">暂无评论记录</view>

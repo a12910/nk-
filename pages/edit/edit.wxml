@@ -1,0 +1,108 @@
+<!--pages/edit/edit.wxml-->
+<template name="star" style="display:flex">
+  <view style="height:40rpx; width:40rpx" bindtap='star_change' data-num="{{num}}">
+    <image wx:if="{{length<=0}}" src='png/star0.png' style="height:40rpx; width:40rpx"></image>
+    <image wx:else src='png/star1.png' style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view style="width:13rpx"></view>
+</template>
+
+<view style="height:15rpx"></view>
+<view class="box0" style="height:128rpx;justify-content:center; align-items:center;">
+  <view id='edit_title'>
+    <image src='png/title.png' id="title_img"></image>
+    <view style="width:20rpx;"></view>
+    <view id="title_text1">发布课程评价</view>
+  </view>
+</view>
+<view style="height:15rpx"></view>
+<view class='box0'>
+  <view style="height:20rpx"></view>
+  <view id='title_box2'>
+    <view style="width:25rpx;"></view>
+    <image src='png/form.png' id="title_img2"></image>
+    <view style="width:20rpx;"></view>
+    <view id="title_text2">{{lesson_sname}}</view>
+    <!-- <view style="width:20rpx;"></view> -->
+    <view class="smalltext">*请如实负责提交评价</view>
+  </view>
+  <view style="height:15rpx"></view>
+  <view style="width:625rpx;position:relative;left:25rpx;height:4rpx;background-color:#f1f1f1"></view>
+  <view style="height:25rpx"></view>
+  <picker bindchange='teacher_choose' value="{{teacher_index}}" range="{{teachers2}}" style="width:100%">
+    <view id='tea_choose'>
+      <image src='png/teacher.png' id="tea_img1"></image>
+      <view style="width:40rpx;"></view>
+      <view class='title_text3'>{{teachers2[teacher_index]}}</view>
+      <image src='png/down.png' id='tea_img2'></image>
+    </view>
+  </picker>
+  <view style="height:20rpx"></view>
+  <view id='star_choose'>
+    <view id='star_text'>请针对这门课进行星级评分</view>
+    <view style="width:60rpx"></view>
+    <view style="display:flex">
+      <template is="star" data="{{length:mark, num:0}}" />
+      <template is="star" data="{{length:mark-1, num:1}}" />
+      <template is="star" data="{{length:mark-2, num:2}}" />
+      <template is="star" data="{{length:mark-3, num:3}}" />
+      <template is="star" data="{{length:mark-4, num:4}}" />
+
+    </view>
+  </view>
+  <view style="height:20rpx"></view>
+  <view style="width:625rpx;position:relative;left:25rpx;height:4rpx;background-color:#f1f1f1"></view>
+  <view style="height:10rpx"></view>
+  <!-- </view>
+<view style="height:15rpx"></view>
+<view class='box0'>
+  <view style="height:30rpx"></view> -->
+  <image src='png/text.png' id='text_img'></image>
+  <view style="height:30rpx"></view>
+  <!-- <view id='title_box3'> -->
+
+
+  <!-- <view class='title_text3'>选择教师</view> -->
+
+  <!-- </view> -->
+
+  <view id='title_box4'>
+    <image src='png/show.png' id="title_img3"></image>
+  </view>
+
+
+  <textarea id="textarea1" bindinput="ans0" placeholder="回答得越全面就能帮助到越多同学哦～" name="ans_input" value='{{answer}}' wx:if="{{!is_getinfo}}">
+  </textarea>
+  <!-- <view style="height:30rpx"></view> -->
+</view>
+
+<view style="height:15rpx"></view>
+<!-- <view id="title_box1">
+
+</view> -->
+
+<view id='confirm_box'>
+  <view style="height:100%;display:flex" bindtap='is_niming'>
+    <image wx:if='{{is_anonymous==1}}' src='png/check1.png' class='nm_check'></image>
+    <image wx:else src='png/check0.png' class='nm_check'></image>
+    <view style="width:10rpx"></view>
+    <view id='confirm_text'>匿名发布</view>
+
+  </view>
+
+  <view id='confirm_but'>
+    <view id='confirm_text2' bindtap='but_save'>保存并发布</view>
+  </view>
+
+</view>
+
+<view id="mask1" bindtap='mask1' wx:if="{{is_getinfo}}"></view>
+<view id="get_info" wx:if="{{is_getinfo}}">
+  <view id="ginfo_text">请授权获取用户信息</view>
+  <button open-type="getUserInfo" id="ginfo_but1" bindtap='mask1'>确定</button>
+  <!-- <button id="ginfo_but2" bindtap='mask1'></button> -->
+</view>
+<!-- <view bindtap='is_niming'>{{is_anonymous?'匿名':'不匿名'}}</view> -->
+<!-- <view style="height:100rpx">{{now_ques}}</view> -->
+
+<!-- <button style="height:100rpx" bindtap='but_save'>保存</button> -->

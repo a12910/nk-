@@ -1,0 +1,306 @@
+/* pages/lesson/lesson.wxss */
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #f1f1f1;
+}
+
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}
+
+
+#les_box1{
+  height:165rpx;
+  display: flex;
+  justify-content:center; 
+  align-items:center;
+}
+
+#les_text1{
+  font-size: 38rpx;
+  position: relative;
+  color:#4a4a4a;
+  /* height:165rpx; */
+  width:500rpx;
+  text-align: center;
+  /* top:56rpx; */
+
+}
+
+#teachers_box{
+  /* height:448rpx; */
+}
+
+#tea_image1{
+  position:relative;
+  top:41rpx;
+  height:35rpx;
+  width:40rpx;
+}
+
+.bluetext{
+  font-size: 34rpx;
+  font-weight: 600;
+  color:#5381e2;
+}
+
+#tea_text1{
+  position: relative;
+  top:38rpx;
+  width:300rpx;
+
+}
+
+#tea_text2{
+  position: relative;
+  top:60rpx;
+  width:293rpx;
+  text-align: right;
+  color:#787878;
+  font-size: 18rpx;
+}
+
+#teacher_box0{
+  width:100%;
+  
+}
+.tea_long{
+  height:360rpx;
+}
+.tea_short{
+  height:200rpx;
+}
+.teacher_box1{
+  display:flex;
+  height:70rpx;
+  position: relative;
+  top:21rpx;
+}
+.star0{
+  height:40rpx;
+  position:relative;
+  left:0rpx;
+  top:-52rpx;
+}
+
+.tea_text3{
+  /* position: relative; */
+  /* top:21rpx; */
+  color:#4a4a4a;
+  font-size:30rpx;
+  width:135rpx;
+}
+
+#ans_text1{
+  position: relative;
+  top:38rpx;
+  width:250rpx;
+}
+
+#myans_mess{
+  position: relative;
+  top:41rpx;
+  width:40rpx;
+  height:40rpx;
+}
+
+
+
+#answer_mybox{
+  position:fixed;
+  bottom:0;
+  width:100%;
+  height:94rpx;
+  background-color: #ffffff;
+  
+  /* border-top:#d8d8d8 2rpx; */
+}
+
+#ansmy_image{
+  position: relative;
+  top:26rpx;
+  height:42rpx;
+  width:40rpx;
+}
+
+#ansmy_text1{
+  position: relative;
+  top:27rpx;
+  left:15rpx;
+  font-size: 28rpx;
+  /*font-weight: 500;*/
+}
+
+.image_gray{
+  filter: grayscale(100%);
+}
+
+#order_time1{
+  position: relative;
+  top:44rpx;
+  width:33rpx;
+  height:33rpx;
+}
+
+.ans_text2{
+  position: relative;
+  top:56rpx;
+  /* width:29rpx; */
+  /* height:31rpx; */
+  font-size: 14rpx;
+  color: #9b9b9b;
+}
+
+.answer_box0{
+  position: relative;
+  left:25rpx;
+  width:650rpx;
+
+  
+}
+
+.textss1{
+   color:#4a4a4a;
+   font-size: 28rpx;
+   position: relative;
+   top:-5rpx;
+   font-weight: 600;
+}
+
+.good_count1{
+  position: relative;
+  top:-3rpx;
+  width:90rpx;
+  height:29rpx;
+  font-size: 30rpx;
+  color: #9b9b9b;
+  text-align: right;
+}
+
+.good_count2{
+  position: relative;
+  top:-5rpx;
+  width:43rpx;
+  height:35rpx;
+}
+
+.answer_box1{
+  width:630rpx;
+  color:#4a4a4a;
+  font-size: 34rpx;
+  /* white-space:pre-line;  */
+}
+
+.answer_box2{
+  width:100%;
+  height:38rpx;
+  display: flex;
+  justify-content: space-between;
+  /* color:#4a4a4a; */
+  /* font-size: 28rpx; */
+}
+
+.smalltext{
+  font-size: 26rpx;
+  color: #9b9b9b;
+}
+#mask{
+  position: fixed;
+  top:0rpx;
+  left:0rpx;
+  height:100%;
+  width:100%;
+  z-index:1000;
+  opacity: 0.6;
+  background-color: #000;
+  
+}
+
+#edit_box0{
+  position: fixed;
+  top:98rpx;
+  left:0rpx;
+  width:100%;
+  height:1000rpx;
+  background-color: #fff;
+  border-radius: 40rpx;
+  z-index:1001;
+}
+
+#edit_text1{
+  width:100%;
+  height:92rpx;
+  border-radius: 35rpx;
+  box-shadow: 0rpx 2rpx 6rpx rgba(181,181,181,0.5);
+  display: flex;
+}
+
+#etext_box2{
+  position: relative;
+  left:45rpx;
+  height:40rpx;
+  width:100%;
+  display: flex;
+}
+
+#etext2_image1{
+  width:32rpx;
+  height:34rpx;
+
+}
+
+#edit_smalltext1{
+  position: relative;
+  top:15rpx;
+  font-size: 14rpx;
+  color:#989898;
+}
+
+#edit_choose{
+  position: relative;
+  left:45rpx;
+  height:40rpx;
+  width:228rpx;
+  background-color: #fbfbfb;
+  box-shadow: 1rpx 2rpx 6rpx rgba(108,108,108,0.5);
+  display: flex;
+}
+
+#echoose_image{
+  width:30rpx;
+  height:26rpx;
+  position: relative;
+  left:10rpx;
+  top: 8rpx;
+}
+
+#ans_no{
+  height:200rpx;
+  width:100%;
+  text-align: center;
+
+}
+
+#ans_no1{
+  color:#4a4a4a;
+  font-size: 28rpx;
+  position: relative;
+  top:30rpx;
+}
+
+#lcol_img{
+  position: absolute;
+  top:27rpx;
+  left:625rpx;
+  z-index:2000;
+
+}
+
+.small_del{
+  color:#d8d8d8;
+  font-size: 28rpx;
+  
+}

@@ -1,0 +1,104 @@
+/* pages/my/my1.wxss */
+@import "../lesson/lesson.wxss";
+
+#edit_title{
+  position: relative;
+  display:flex;
+  left:275rpx;
+  top:40rpx;
+  width:200rpx;
+  height:42rpx;
+
+}
+
+#title_img{
+  width:40rpx;
+  height:42rpx;
+  /* position: relative; */
+}
+
+#title_text1{
+  font-size: 32rpx;
+  font-weight: 600;
+  color:#5381e2;
+}
+
+
+.box3{
+  position: relative;
+  width:606rpx;
+  left:48rpx;
+  background-color: #fff;
+  box-shadow: 0rpx 2rpx 6rpx rgba(181,181,181,0.5);
+}
+
+.time_text{
+  font-size: 28rpx;
+  color:#989898;
+
+}
+
+.answer_text3{
+  color: #363636;
+  font-size: 32rpx;
+  width:630rpx;
+}
+
+.del_text{
+  font-size: 28rpx;
+  color: #989898;
+  display: flex;
+  position: relative;
+  top:-3rpx;
+}
+
+.good_countimg{
+  position: relative;
+  top:-1rpx;
+  left:-27rpx;
+  width:35rpx;
+  height:35rpx;
+}
+
+.good_counttext{
+  position: relative;
+  top:-3rpx;
+  width:50rpx;
+  height:29rpx;
+  font-size: 32rpx;
+  color: #9b9b9b;
+  /*text-align: right;*/
+}
+
+.tolesson_text{
+  /*width:200rpx;*/
+  /*text-align: right;*/
+  font-size: 34rpx;
+  color: #363636;
+  font-weight: 600;
+}
+
+.del_box{
+  position: absolute;
+  left:560rpx;
+  top:25rpx;
+  display:flex;
+
+}
+
+.ans_moreimg{
+  position: relative;
+  left: 480rpx;
+  top: 15rpx;
+  width:33rpx;
+  height: 10rpx;
+}
+
+#no_text{
+  font-size: 31rpx;
+  color: #787878;
+  position: absolute;
+  top:250rpx;
+  left:300rpx;
+  z-index: 100;
+}

@@ -1,0 +1,96 @@
+<!--pages/my/my1.wxml-->
+<!-- <view style="height:15rpx;"></view> -->
+<view class="box0" style="height:128rpx;width:100%;left:0rpx">
+  <view id='edit_title'>
+    <image src='png/my_ans.png' id="title_img"></image>
+    <view style="width:20rpx;"></view>
+    <view id="title_text1">我的评论</view>
+  </view>
+</view>
+<view style="height:15rpx;"></view>
+
+<!-- <view class="box0"> -->
+
+<!-- <view style="height:78rpx;width:100%;display:flex">
+    <view style="width:48rpx;"></view>
+    <image id="myans_mess" src='png/message.png'></image>
+    <view style="width:15rpx;"></view>
+    <view id="ans_text1" class="bluetext">全部评论（{{answers.length}}）</view>
+  </view> -->
+<view style="height:28rpx;width:100%;"></view>
+<view wx:for="{{answers}}" wx:key="answer">
+  <view class="box0">
+    <view style="position:relative;left:26rpx;">
+      <view style="height:19rpx"></view>
+      <view class="time_text">{{item.time.normal2}}</view>
+      <view class="del_box" bindtap='ans_del' data-info="{{item}}">
+        <view class="del_text">
+          删除
+        </view>
+        <view style="width:10rpx"></view>
+        <image style="height:30rpx;width:30rpx" src='png/delete.png'></image>
+      </view>
+
+      <view style="height:10rpx"></view>
+      <view class="tolesson_text" bindtap='to_lesson' data-info="{{item}}">
+        {{item.class_name}}>{{item.teacher_name}}
+      </view>
+      <view style="height:10rpx"></view>
+      <view class="answer_text3" bindtap='to_lesson' data-info="{{item}}">
+        {{item.answer_text}}
+      </view>
+      <view style="height:30rpx"></view>
+      <view style="width:550rpx;display:flex">
+        <view class="good_counttext">{{item.good_count}}</view>
+        <view style="width:10rpx"></view>
+        <image class="good_countimg" src='png/good2.png'></image>
+        <view style="width:40rpx"></view>
+
+        <image src='png/answer_more.png' class="ans_moreimg"></image>
+      </view>
+      <view style="height:20rpx"></view>
+    </view>
+
+  </view>
+  <view style="height:20rpx"></view>
+  <!-- <view style="height:35rpx;display:flex;justify-content:space-between">
+      <view class="textss1" style="width:350rpx;display:flex">
+        <image src='{{item.logo}}' style="height:35rpx;width:35rpx;border-radius:18rpx"></image>
+        <view style="width:10rpx;"></view>
+        {{item.user_name}} > {{item.teacher_name}}
+      </view>
+      <view style="width:110rpx;display:flex">
+        <view class="good_count1">{{item.good_count}}</view>
+        <view style="width:10rpx"></view>
+        <image class="good_count2 image_gray" src='png/good1.png'></image>
+      </view>
+    </view>
+    <view style="height:10rpx"></view>
+    <view class="answer_box1" bindtap='to_lesson' data-inf0="{{item}}">
+      {{item.answer_text}}
+    </view>
+    <view style="height:7rpx"></view>
+    <view class="answer_box2">
+      <view class="smalltext">{{item.time.exa}}</view>
+      <view class="smalltext" bindtap='ans_del' data-info="{{item}}">
+        <image style="height:21rpx;width:21rpx" src='png/delete.png'></image>
+      </view>
+    </view>
+    <view style="height:4rpx;background-color:#f1f1f1;width:100%"></view>
+    <view style="height:30rpx"></view>
+  </view> -->
+
+</view>
+
+<view wx:if="{{answers.length==0}}" id="no_text">暂无评论记录</view>
+<!-- <view>my answer</view>
+<view wx:for="{{my_answer}}">
+  <view>
+    {{item.answer}}
+  </view>
+  <view bindtap="ans_del" data-all="{{item}}">删除答案</view>
+
+</view> -->
+
+
+<image src='../../png/bg1.png' class="bg_image"></image>

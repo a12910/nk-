@@ -1,0 +1,145 @@
+<template name="star" style="display:flex">
+  <view style="height:40rpx; width:40rpx">
+    <image wx:if="{{length<1}}" src='png/star0.png' style="height:40rpx; width:40rpx"></image>
+    <scroll-view wx:if="{{length>=0&&length<1}}" class="star0" scroll-x style="width:{{40*length}}rpx;">
+      <image src='png/star1.png' style="height:40rpx; width:40rpx"></image>
+    </scroll-view>
+    <image wx:if="{{length>=1}}" src='png/star1.png' style="width:40rpx;height:40rpx;"></image>
+  </view>
+  <view style="width:13rpx"></view>
+</template>
+
+<view style="height:30rpx;"></view>
+  <view id="lcol_img">
+    <image wx:if="{{lesson_info.is_collect==1}}" src="png/collect1.png" style="width:40rpx;height:110rpx" mode="aspectFit" bindtap='lescollect_change'></image>
+    <image wx:else src="png/collect0.png" style="width:40rpx;height:110rpx" mode="aspectFit" bindtap='lescollect_change'></image>
+  </view>
+<view id="les_box1" class="box0">
+  <!-- <view style="width:100rpx;"></view> -->
+  <view id="les_text1">
+    <text>{{lesson_info.class_name}}</text>
+  </view>
+
+</view>
+
+<view style="height:10rpx"></view>
+<view class="box0" id="teachers_box">
+  <view style="width:100%;height:85rpx;display:flex">
+    <view style="width:25rpx"></view>
+    <image src='png/teachers1.png' id="tea_image1"></image>
+    <view style="width:19rpx"></view>
+    <view class="bluetext" id="tea_text1">任课教师（{{teachers.length}}）</view>
+    <view id="tea_text2">* 以下数据均来自用户自由评价</view>
+  </view>
+  <view style="height:11rpx"></view>
+  <view style="display:flex">
+    <view style="width:21rpx"></view>
+    <view style="width:660rpx;background-color:#d8d8d8;height:2rpx"></view>
+    <view style="width:21rpx"></view>
+  </view>
+  <scroll-view id="teacher_box0" class="{{teachers.length>2?'tea_long':'tea_short'}}" scroll-y>
+    <view style="height:20rpx"></view>
+    <view style="" class="teacher_box1" wx:for="{{teachers}}">
+      <view style="width:125rpx"></view>
+      <view class="tea_text3">{{item.teacher_name}}</view>
+      <!-- {{item.mark}} -->
+      <template is="star" data="{{length:item.mark}}" />
+      <template is="star" data="{{length:item.mark-1}}" />
+      <template is="star" data="{{length:item.mark-2}}" />
+      <template is="star" data="{{length:item.mark-3}}" />
+      <template is="star" data="{{length:item.mark-4}}" />
+    </view>
+    <view style="height:20rpx"></view>
+  </scroll-view>
+</view>
+<view style="height:10rpx;width:100%;"></view>
+<view class="box0">
+
+  <view style="height:100rpx;width:100%;display:flex">
+    <view style="width:25rpx;"></view>
+    <image id="myans_mess" src='png/message.png'></image>
+    <view style="width:15rpx;"></view>
+    <view id="ans_text1" class="bluetext">全部评论（{{answers.length}}）</view>
+    <view style="width:117rpx"></view>
+    <image id="order_time1" src='png/order_time1.png' class="{{order_time?'':'image_gray'}}" bindtap="order_change"></image>
+    <view style="width:7rpx"></view>
+    <view class="ans_text2" style="width:70rpx" bindtap="order_change">按时间排序</view>
+    <view style="width:18rpx"></view>
+    <image id="order_time1" src='png/order_hot1.png' class="{{order_time?'image_gray':''}}" bindtap="order_change"></image>
+    <view style="width:7rpx"></view>
+    <view class="ans_text2" style="width:70rpx" bindtap="order_change">按热度排序</view>
+  </view>
+  <view style="height:18rpx;width:100%;"></view>
+  <view class="answer_box0" wx:for="{{answers}}" wx:key="answer">
+    <view style="height:35rpx;display:flex;justify-content:space-between">
+      <view class="textss1" style="width:350rpx;display:flex">
+        <image src='{{item.logo}}' style="height:35rpx;width:35rpx;border-radius:18rpx"></image>
+        <view style="width:10rpx;"></view>
+        {{item.user_name}} > {{item.teacher_name}}
+      </view>
+      <view style="width:110rpx;display:flex" bindtap='good_change' data-id='{{item._id}}' data-type='{{item.is_good}}' data-index="{{index}}">
+        <view class="good_count1">{{item.good_count}}</view>
+        <view style="width:10rpx"></view>
+        <image class="good_count2 " src='{{item.is_good==1?"png/good1.png":"png/good1_1.png"}}'></image>
+        <!-- <view class="good_count1">{{item.bad_count}}</view> -->
+        <!-- <view style="width:10rpx"></view>
+        <image class="good_count2 {{item.is_good==-1?'':'image_gray'}}" src='png/bad1.png'></image> -->
+      </view>
+    </view>
+    <view style="height:10rpx"></view>
+    <view class="answer_box1" bindlongtap='send_main' data-info='{{item}}'>
+      {{item.answer_text}}
+    </view>
+    <view style="height:21rpx"></view>
+    <view class="answer_box2">
+      <view class="smalltext">{{item.time.exa}}</view>
+      <view class="smalltext" wx:if="{{user_id == item.user_id||is_admin}}" bindtap='ans_delete' data-info="{{item}}" style='display:flex'>
+        <view class="small_del">删除</view>
+        <view style="width:10rpx"></view>
+        <image style="height:30rpx;width:30rpx" src='png/delete.png'></image>
+      </view>
+    </view>
+    <view style="height:11rpx"></view>
+    <view style="height:4rpx;background-color:#f1f1f1;width:100%"></view>
+    <view style="height:30rpx"></view>
+  </view>
+  <view wx:if="{{answers.length==0}}" id='ans_no'>
+    <view id="ans_no1">此处无声胜有声···</view>
+  </view>
+
+
+</view>
+<view style="height:108rpx;"></view>
+
+
+<view id="answer_mybox" bindtap='my_answer'>
+  <view style="height:2rpx;width:100%;background-color:#d8d8d8;"></view>
+  <view style="display:flex;width:100%">
+    <view style="width:73rpx"></view>
+    <image id="ansmy_image" src='png/ans_my1.png'></image>
+    <view class="bluetext" id="ansmy_text1">我来评论…</view>
+  </view>
+</view>
+
+<!-- <view wx:if="{{is_edit}}" id="mask" catchtouchmove='stop_move'></view>
+<view wx:if="{{is_edit}}" id="edit_box0">
+  <view id="edit_text1">
+    <view style="width:73rpx"></view>
+    <image id="ansmy_image" src='png/ans_my1.png'></image>
+    <view class="bluetext" id="ansmy_text1">我来评论…</view>
+  </view>
+  <view style="height:22rpx"></view>
+  <view id="etext_box2">
+    <image src="png/form.png" id="etext2_image1"></image>
+    <view style="width:19rpx"></view>
+    <view class="bluetext" style="width:300rpx;">{{lesson_info.name}}</view>
+    <view style="width:193rpx"></view>
+    <view id="edit_smalltext1">* 请如实负责提交评价</view>
+  </view>
+  <view style="height:30rpx"></view>
+  <view id="edit_choose">
+    <image id="echoose_image" src='png/choose.png'></image>
+    <view></view>
+  </view>
+
+</view> -->

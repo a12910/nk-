@@ -1,0 +1,135 @@
+/* pages/ask/ask.wxss */
+/* @import"../edit/edit.wxss"; */
+page {
+  height: 100%;
+  width: 100%;
+  background-color: #eee;
+}
+
+#edit_title{
+  position: relative;
+  display:flex;
+  left:250rpx;
+  top:40rpx;
+  width:300rpx;
+  height:42rpx;
+
+}
+
+#title_img{
+  width:40rpx;
+  height:42rpx;
+  /* position: relative; */
+}
+
+#title_text1{
+  font-size: 32rpx;
+  font-weight: 600;
+  color:#5381e2;
+}
+
+#contact_text{
+  font-size: 33rpx;
+  color: #4a4a4a;
+  font-weight: 600;
+  position: relative;
+  top:70rpx;
+  left:50rpx;
+}
+
+#contact_in{
+  position: relative;
+  left:50rpx;
+  width:530rpx;
+  height:70rpx;
+  top:90rpx;
+  background-color: #f8f8f8;
+  box-shadow: 1rpx 2rpx 6rpx rgba(108,108,108,0.3);
+  color:#787878;
+  font-size: 30rpx;
+}
+
+#ques_text{
+  font-size: 33rpx;
+  color: #4a4a4a;
+  font-weight: 600;
+  position: relative;
+  top:160rpx;
+  left:50rpx;
+}
+
+#ques_in{
+  position: relative;
+  left:50rpx;
+  width:570rpx;
+  height:400rpx;
+  top:190rpx;
+  background-color: #f8f8f8;
+  border: #f8f8f8 solid 20rpx;
+  box-shadow: 1rpx 2rpx 6rpx rgba(108,108,108,0.3);
+  color:#787878;
+  font-size: 30rpx;
+  border-radius: 3rpx;
+}
+
+#confirm_box{
+  position: fixed;
+  bottom: 0rpx;
+  height:94rpx;
+  width: 100%;
+  background-color: #fff;
+  display: flex;
+  z-index:1000;
+  border-top: 2rpx solid #f1f1f1;
+}
+
+#confirm_text{
+  position: relative;
+  left:40rpx;
+  top:25rpx;
+  font-size: 28rpx;
+  color:#4a4a4a;
+
+}
+
+.nm_check{
+  position: relative;
+  left:40rpx;
+  top:25rpx;
+  width:36rpx;
+  height:36rpx;
+}
+
+#confirm_but{
+  position: absolute;
+  width:250rpx;
+  height:94rpx;
+  left:500rpx;
+  background-color: #5381e2;
+  
+  align-items: center;
+  justify-content: center;
+
+
+}
+
+#confirm_text2{
+  color:#fff;
+  font-size: 30rpx;
+  font-weight: 400;
+  position: relative;
+  top:23rpx;
+  width:100%;
+  text-align: center;
+}
+
+#c_but2{
+ background-color: #5381e2;
+ color:#fff;
+ font-size: 30rpx;
+ text-align: center;
+ height:40rpx;
+ width:340rpx;
+ border-radius: 10rpx;
+ border: 10rpx #5381e2 solid;
+}
