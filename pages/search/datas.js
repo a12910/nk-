@@ -1,12 +1,12 @@
 var departments = [{
-    "name": "全部课程",
-    // "short": "public",
-    "short": "全部课程",
-    "type": 1
-},{
+        "name": "全部课程",
+        // "short": "public",
+        "short": "全部课程",
+        "type": 1
+    }, {
         "name": "校公共必修课",
         // "short": "public",
-        "short":"必修课",
+        "short": "必修课",
         "type": 1
     },
     {
@@ -150,11 +150,10 @@ var data1 = {
     type: 0
 }
 
-var location = [
-    {
-        name: '全部校区',
-        short: '全部校区'
-    },{
+var location = [{
+    name: '全部校区',
+    short: '全部校区'
+}, {
     name: '八里台校区',
     short: '八里台校区'
 }, {
@@ -175,18 +174,19 @@ var data2 = {
     type: 0
 }
 
-var week = [{name:'1-16周',
-short:'全部周次',
+var week = [{
+    name: '1-16周',
+    short: '全部周次',
     start: 1,
     end: 16
 }, {
-        name: '1-8周',
-        short: '1-8周',
+    name: '1-8周',
+    short: '1-8周',
     start: 1,
     end: 8
 }, {
-        name: '9-16周',
-        short: '9-16周',
+    name: '9-16周',
+    short: '9-16周',
     start: 9,
     end: 16
 }]
@@ -197,43 +197,64 @@ var data3 = {
     type: 0
 }
 
-var clas = [
-    ["", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", ""],
-    ["", "", "", "", "", "", ""]
-]
+var clas = []
 
 var data4 = {
     name: '节次',
     select_index: 0,
-    datas: clas,
     type: 1,
-    is_select:true
+    is_select: true
 }
 
-function get_all(){
-    var lists=[]
-    data1.datas.forEach(function(item){
+function get_all() {
+    var lists = []
+    data1.datas.forEach(function(item) {
         lists.push(item.name)
     })
     data1.datas_list = lists
     lists = []
 
-    data2.datas.forEach(function (item) {
+    data2.datas.forEach(function(item) {
         lists.push(item.name)
     })
     data2.datas_list = lists
     lists = []
 
-    data3.datas.forEach(function (item) {
+    data3.datas.forEach(function(item) {
         lists.push(item.name)
     })
     data3.datas_list = lists
     lists = []
+
+    for (var x = 0; x < 7; x++) {
+        var t = [{
+            type: -1,
+            num: -1,
+            block_type: 1,
+            name:[x*2+1, x*2+2]
+        }]
+        for (var y = 0; y < 7; y++) {
+            if (x == 2 || y > 5) {
+                t.push({
+                    type: 0,
+                    num: (x + 1) * 8 + y + 1,
+                    block_type:2,
+                    name:''
+                })
+            }else{
+                t.push({
+                    type: 0,
+                    num: (x + 1) * 8 + y + 1,
+                    block_type: 1,
+                    name:''
+                })
+            }
+
+        }
+        clas.push(t)
+
+    }
+    data4.datas = clas
 
 
     var datas = [data1, data2, data3, data4]

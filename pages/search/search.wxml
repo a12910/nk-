@@ -34,8 +34,29 @@
         <image src='png/down.png' class="sel_img1"></image>
     </view>
     <view id="select_box" wx:if="{{datas.is_select}}">
-        <view id='sel_box2'>
-            <view wx:for="{{[1,2,3,4,5,6,7]}}" class='sel_title' wx:for-item="item">{{item}}</view>
+        <view id='sel_box2' class="border1">
+            <view style="display:flex">
+                <view wx:for="{{['一','二','三','四','五','六','日']}}" class='sel_title border2' wx:for-item="item">{{item}}</view>
+            </view>
+            <view style="display:flex">
+                <view>
+                    <view wx:for="{{[{name:'上午',type:1},{name:'中午',type:2},{name:'下午',type:1},{name:'晚上',type:1}]}}" wx:for-item='item3' class="border2 time_block {{item3.type==1?'time_block1':'time_block2'}}">{{item3.name}}</view>
+                </view>
+                <view>
+                    <view wx:for="{{datas.datas}}" wx:for-item="item1" style="display:flex">
+                        <view wx:for="{{item1}}" wx:for-item="item2">
+                            <view class="sel_block1 {{item2.type=='0'?(item2.bolck_type==1?'':''):''}} border2" bindtap='time_choose' data-num="{{item2.num}}">{{item.name}}
+
+                            </view>
+                        </view>
+                    </view>
+                </view>
+
+            </view>
+
+        </view>
+        <view id='sel_box3'>
+
         </view>
     </view>
 </template>

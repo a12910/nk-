@@ -1,18 +1,18 @@
 {
-  "pages": [
+  "pages": ["pages/search/search",
     "pages/main/main",
     "pages/ask/ask",
     "pages/my/my_col",
     "pages/settings/settings",
     "pages/edit/edit",
-    "pages/search/search",
+    
     "pages/my/my1",
     "pages/lesson/lesson",
     "pages/about/about",
     "pages/settings/about"
   ],
   "window": {
-    "backgroundTextStyle": "",
+    "backgroundTextStyle": "dark",
     "navigationBarBackgroundColor": "#2c2d31",
     "navigationBarTitleText": "NK好课优选",
     "navigationBarTextStyle": "white"
